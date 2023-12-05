@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tree Data Driven Article</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        The Health Of Trees In Lawerence, MA In The Most Populated Streets
+      </h1>
+      <h2>Data Driven Article</h2>
+      <h2>Thomas Bardhi</h2>
+    </header>
+
+    <section id="context">
+      <p>
+        In the industrious city of Lawrence, Massachusetts, the local government
+        is on a mission to combat urban heat vulnerability through strategic
+        tree planting. The noble endeavor was to use the urban forest as a
+        natural shield, providing shade and respite from the relentless sun,
+        particularly in the city's most heat-affected areas. In other words,
+        more trees, more shade. In this article, I’ll attempt to visualize these
+        efforts and encover any meaningful insights behind this data.
+      </p>
+    </section>
+
+    <section id="chart1">
+      <h3>Tree Diameter Distribution in Feet</h3>
+      <div id="bar"></div>
+      <div id="diameterTexts">
+      
+        
+      
+      
+      <p>
+        The chart above shows us the shape of Lawrence's urban forest,
+        showcasing a substantial cluster of trees with <span class="diameter-text" data-diameter="3">3ft</span> diameters. There's also a lot of trees with <span class="diameter-text" data-diameter="2.5">2.5ft</span> diameters and  <span class="diameter-text" data-diameter="3.5">3.5ft</span> diameters.
+        This girth is emblematic of a healthy forest. The prevalence of these
+        bigger, more mature trees is critical in urban settings, particularly as
+        they serve as natural combatants against the heat island effect,
+        offering shade and cooler air to mitigate the sweltering urban
+        temperatures.
+      </p>
+      <p>
+        Simply put, more trees, more shade.This is especially valuable in
+        densely populated areas like Lawerence where concrete and asphalt absorb
+        and radiate heat, leading to significantly higher temperatures compared
+        to rural surroundings.
+      </p>
+      <p>
+        However, the distribution revealed by the chart suggests a tapering off
+        at larger diameters, indicating a potential scarcity of the oldest, most
+        beneficial trees, highlighed by the  <span class="diameter-text" data-diameter="4">4ft</span> bar. This gap signifies a crucial point for urban planners:
+        the need to not just plant new trees, but to nurture them to maturity,
+        ensuring they live their full lifecycle. Let's take a look elsewhere and
+        revisit this insight later on.
+      </p>
+    </div>
+    </section>
+
+    <section id="chart2">
+      <h3>Number of Trees Per Top N Streets</h3>
+      <div id="streetwise-bar"></div>
+      <label for="streetRange">Show top N streets:</label>
+      <input
+        type="range"
+        id="streetRange"
+        min="1"
+        max="50"
+        value="10"
+        step="1"
+      />
+      <span id="rangeValue">10</span>
+      <p>
+        <p><em>Note not all the data points are being plotted here because not all the entries have the tree diameter data.</em></p>
+      </p>
+      <p>
+        This chart provides a clear visualization of the distribution of trees
+        across different urban areas, which is instrumental for understanding
+        urban heat vulnerability.
+      </p>
+      <p>
+        At a glance, we see that Storrow Park is the most tree-dense area,
+        suggesting that it might be one of the cooler areas in the city, a
+        natural refuge from the heat. This high concentration of trees is not
+        only aesthetically pleasing but serves a crucial ecological function by
+        providing ample shade, reducing ground temperatures, and improving air
+        quality for its local residents.
+      </p>
+      <p>
+        As we move down the list, we observe a declining number of trees along
+        the corridors of Salem Street, Lawrence Street, and Hampshire Street.
+        The diminishing bars on the chart point to potential hot spots that may
+        lack sufficient tree coverage to mitigate the urban heat effect. These
+        areas could be at a higher risk during heat waves, affecting the quality
+        of life for residents and increasing energy consumption due to the
+        higher demand for air conditioning. Furthermore, we must be able to
+        synthesize this. Let’s plot each tree and color code it by diameter.
+      </p>
+    </section>
+
+    <section id="chart3">
+      <h3>How Do The Diameters Compare Geospatially?</h3>
+      <div id="scatter-plot"></div>
+      <p><em>Note not all the data points are being plotted here because not all the entries have the tree diameter data.</em></p>
+      <p>
+        The distribution of tree diameters across the city isn't uniform.
+        Certain areas exhibit clusters of larger diameters, likely indicating
+        regions with older, more established trees. Conversely, areas with
+        smaller diameters may correspond to newer developments or recently
+        planted trees.
+      </p>
+      <p>
+        The varied diameters and their spread can indicate the health of the
+        urban environment. Areas with a good mix of tree sizes are indicative of
+        ongoing tree planting and replacement efforts, essential for a
+        sustainable urban forest. The question becomes how healthy are most
+        populated streets in Lawrence, Ma.?
+      </p>
+    </section>
+
+    <section id="chart4">
+      <h3>How Do The Top 10 Streets Compare with Diameter Size(ft)?</h3>
+      <div id="vis"></div>
+      <p>
+        We have streets that not only have a high number of trees but also
+        contain many large-diameter trees, which together enhance the shade
+        coverage and subsequently increase the area's resilience to urban heat.
+        Streets like Salem Street Corridor and O'Connell / So Common, which
+        appear with darker shades on the heatmap, suggest that they not only
+        have a good quantity of trees but also trees that are mature and large.
+        This combination makes these streets particularly valuable in the urban
+        fabric, offering a cooling effect and a buffer against heatwaves.
+      </p>
+      <p>
+        Conversely, streets with lighter shades on the heatmap, despite possibly
+        having a high tree count, may have a younger or less mature canopy,
+        which provides less immediate shade and cooling benefits. It's crucial
+        for urban planning to target these areas for growth promotion and
+        further tree planting to ensure a more uniform distribution of mature
+        trees across the city.
+      </p>
+      <p>
+        In conclusion, the healthiest and most beneficial streets in terms of
+        combating urban heat vulnerability are those like Salem Street Corridor, O'Connell / So Common, Hampshire St, Daisy St, Marion Ave.
+        These streets, with their high number of large-diameter trees, are
+        bastions of shade and coolness, offering a higher quality of urban life
+        and ecological balance. Recognizing and understanding the combined value
+        of tree count and diameter can guide future tree planting and
+        conservation policies to strategically enhance urban green spaces for a
+        cooler, more sustainable cityscape.  </p>
+    </section>
+    <script src="main.js"></script>
+    <script src="vega.js"></script>
+  </body>
+</html>
